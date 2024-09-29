@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --primary-color: #b65f97;
+    --secondary-color: #f0f4c3;
+    --text-color: #ffe0e0;
+    --accent-color: #b2dfdb;
+  }
+  .dark {
+    --background: #000000;
+    --primary-color: #b65f97;
+    --secondary-color: #f0f4c3;
+    --text-color: #ffe0e0;
+    --accent-color: #b2dfdb;
+  }
+}
+
+@layer base {
+  *,
+  body {
+    @apply m-0 box-border p-0;
+  }
+
+  /* header buttons */
+  .btnHeader {
+    @apply hover:bg-primary hover:text-secondary text-primary border-secondary rounded-full border;
+  }
+}
