@@ -8,6 +8,11 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
+    extend: {
+      opacity: {
+        '75': '.75'
+      }
+    },
     colors: {
       background: 'var(--background)',
       primary: 'var(--primary-color)',
@@ -16,7 +21,9 @@ const config: Config = {
       accentColor: 'var(--accent-color)'
     },
     screens: {
-      xsm: '478px',
+      xxsm: '460px',
+
+      xsm: '568px',
 
       sm: '640px',
 
@@ -30,6 +37,9 @@ const config: Config = {
     },
     fontFamily: {
       vazir: ['var(--font-vazir-regular)']
+    },
+    opacity: {
+      '75': '.75'
     }
   },
   plugins: [require('tailwindcss-animate')]

@@ -5,6 +5,8 @@ import Header from '@/components/ui/Header/header'
 import Footer from '@/components/ui/Footer/footer'
 import { ThemeProvider } from '@/components/ui/Theme/theme-provider'
 import { cn } from '@/lib/utils'
+import PageScroll from '@/components/PageScroll/PageScroll'
+import ClientWrapper from '@/components/Loader/ClientWrapper'
 
 const vazirRegular = localFont({
   src: './fonts/vazir/Vazirmatn-Regular.woff2',
@@ -37,22 +39,25 @@ export default function RootLayout({
     <html lang='fa' dir='rtl' suppressHydrationWarning>
       <body
         className={cn(
-          'font-vazir mx-auto flex min-h-screen flex-col bg-background antialiased md:w-[800px] lg:w-[1000px]',
+          'font-vazir mx-auto flex min-h-screen flex-col bg-background antialiased md:w-[700px] lg:w-[1000px]',
           vazirRegular.variable
           // geistSans.variable,
           // geistMono.variable
         )}
       >
-        <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main className='grow'>{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <ClientWrapper>
+          <PageScroll />
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            <main className='grow'>{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </ClientWrapper>
       </body>
     </html>
   )

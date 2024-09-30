@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <header className='border-secondary xsm:px-8 sticky top-0 flex items-center justify-between border-b bg-background px-4 py-6 md:px-0 md:py-2'>
+    <header className='border-secondary xsm:px-8 sticky top-0 z-10 flex items-center justify-between border-b bg-background px-4 py-8 md:mb-6 md:px-0 md:py-4'>
       <div className='hidden items-center gap-x-3 md:flex'>
         <ThemeToggle />
         <Link href='/signup' className='btnHeader p-3 duration-300'>
