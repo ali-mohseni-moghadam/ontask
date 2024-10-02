@@ -10,11 +10,11 @@ export default function FirstSection() {
   return (
     <>
       <motion.section
-        className='xsm:mt-8 mt-4'
+        className='xsm:mt-8 mt-4 md:px-0'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className='border-secondary flex flex-col items-center rounded-3xl border-2 bg-background p-8 text-center shadow-sm'>
+        <div className='flex flex-col items-center rounded-3xl bg-background p-8 text-center shadow-md'>
           <h3 className='mb-8 text-3xl'>
             برای انجام <span className='text-primary text-3xl'>پروژه</span> های
             بزرگ به یک <span className='text-primary text-3xl'>تیم</span> بزرگ
@@ -27,7 +27,7 @@ export default function FirstSection() {
             ستون و سطرآنچنان که لازم است
           </p>
 
-          <div className='md: flex w-full flex-col items-center justify-center md:flex-row-reverse md:items-start md:gap-x-4'>
+          <div className='flex w-full flex-col items-center justify-center md:flex-row-reverse md:items-start md:gap-x-4'>
             <Link
               href='/signup'
               className='bg-primary xsm:w-[50%] mb-4 flex w-full items-center justify-between rounded-full py-[5.5px] pe-7 ps-4 duration-300 hover:shadow-lg md:w-[30%]'
@@ -46,7 +46,7 @@ export default function FirstSection() {
           </div>
 
           <motion.div
-            className='xxsm:w-[390px] xsm:w-[490px] w-[290px] lg:w-[590px]'
+            className='xxsm:w-[390px] xsm:w-[490px] w-[280px] lg:w-[590px]'
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3 }}
