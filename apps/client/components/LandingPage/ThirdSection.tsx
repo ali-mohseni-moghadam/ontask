@@ -52,10 +52,11 @@ export default function ThirdSection() {
           <ArrowDownIcon className='size-5' />
         </div>
       </motion.div>
-
-      {cardsData.map((item, index) => (
-        <Card key={index} {...item} />
-      ))}
+      <div className='flex w-full flex-col items-center justify-center md:grid md:grid-cols-2 md:gap-4'>
+        {cardsData.map((item, index) => (
+          <Card key={index} {...item} />
+        ))}
+      </div>
     </section>
   )
 }

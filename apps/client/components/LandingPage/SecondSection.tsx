@@ -55,13 +55,13 @@ export default function SecondSection() {
           </div>
         </motion.div>
         <motion.div
-          className='mb-16 rounded-3xl px-3 py-5 shadow-md'
+          className='bg-secondary mb-16 rounded-3xl px-3 py-5'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <p className='border-secondary mb-6 border-b'>
+          <p className='border-secondary bg-secondary mb-6 rounded-lg border-b'>
             ویژگی های <span className='text-primary text-xl'>آن تسک</span>
           </p>
           <h3 className='font-bolder mb-6 text-2xl'>
