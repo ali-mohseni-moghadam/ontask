@@ -22,7 +22,7 @@ export default function Card({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className='my-4 flex w-full flex-col items-end gap-5 rounded-3xl p-4 py-8 shadow-sm'
+      className='xxsm:odd:items-start my-4 flex w-full flex-col items-end gap-5 rounded-2xl bg-[#fcfcfc] p-4 py-8 shadow-md'
     >
       <Icon className='text-primary mb-2 size-7' />
 
