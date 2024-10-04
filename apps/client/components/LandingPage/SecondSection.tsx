@@ -33,7 +33,7 @@ export default function SecondSection() {
     <section className='mt-16'>
       <div>
         <motion.div
-          className='mb-20 rounded-3xl px-2 py-4 shadow-md'
+          className='card mb-20 px-2 py-4'
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

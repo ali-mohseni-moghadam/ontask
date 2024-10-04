@@ -35,7 +35,7 @@ const cardsData = [
 
 export default function ThirdSection() {
   return (
-    <section className='mb-10 flex flex-col items-center justify-center rounded-3xl px-2 py-4 shadow-md'>
+    <section className='card mb-10 flex flex-col items-center justify-center px-2 py-4'>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

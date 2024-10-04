@@ -14,7 +14,7 @@ export default function Menu({ setShow }: MenuProps) {
       animate={{ y: 100, opacity: 1 }}
       transition={{ duration: 0.3 }}
       exit={{ y: -20, opacity: 0 }}
-      className='bg-secondary fixed z-10 h-screen w-full md:hidden'
+      className='fixed z-10 h-screen w-full bg-background md:hidden'
     >
       <div className='my-8 flex flex-col items-center gap-y-6 text-xl'>
         <div className='hover:opacity-60'>

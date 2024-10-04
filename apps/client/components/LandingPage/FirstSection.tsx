@@ -14,7 +14,7 @@ export default function FirstSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className='flex flex-col items-center rounded-3xl bg-background p-8 text-center shadow-md'>
+        <div className='card flex flex-col items-center bg-background p-8 text-center'>
           <h3 className='mb-8 text-3xl'>
             برای انجام <span className='text-primary text-3xl'>پروژه</span> های
             بزرگ به یک <span className='text-primary text-3xl'>تیم</span> بزرگ
