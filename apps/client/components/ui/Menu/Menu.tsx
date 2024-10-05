@@ -22,15 +22,17 @@ export default function Menu({ setShow }: MenuProps) {
             ثبت‌نام
           </Link>
         </div>
-        <hr className='border-t-primary w-4/5' />
+        <hr className='border-t-secondary w-4/5' />
         <div className='hover:opacity-60'>
           <Link href='/login' onClick={() => setShow(false)}>
             ورود
           </Link>
         </div>
-        <hr className='border-t-primary w-4/5' />
+        <hr className='border-t-secondary w-4/5' />
         <div className='text-2xl'>
-          <h4>Ontask Team</h4>
+          <h4>
+            <span className='text-primary'>ONTASK</span> Team
+          </h4>
         </div>
       </div>
     </motion.div>
