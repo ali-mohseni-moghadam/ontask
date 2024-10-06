@@ -1,15 +1,18 @@
 import { handleLogin } from '@/utils/formAction'
+import { redirect } from 'next/navigation'
 
 export default function LoginPage() {
   const loginUser = async (formData: FormData) => {
     'use server'
 
-    const data = handleLogin(formData)
+    const data = await handleLogin(formData)
 
-    console.log(data)
+    if (data.success) {
+      redirect('/dashboard')
+    }
   }
   return (
-    <div className='mb-2 px-6 pt-5'>
+    <div className='mb-2 px-6 pt-5 md:mx-auto md:w-[60%]'>
       <div className='card rounded-3xl p-6'>
         <form action={loginUser}>
           <div className='mb-4 flex flex-col'>
@@ -39,7 +42,7 @@ export default function LoginPage() {
 
           <button
             type='submit'
-            className='bg-primary xsm:w-[50%] hover:text-primary hover:border-secondary w-full rounded-full py-[5.5px] pe-7 ps-4 text-[#ffffff] duration-300 hover:border hover:bg-[#ffffff] md:w-[30%]'
+            className='bg-primary hover:text-primary hover:border-secondary w-full rounded-full py-[5.5px] pe-7 ps-4 text-[#ffffff] duration-300 hover:border hover:bg-[#ffffff]'
           >
             ورود
           </button>
