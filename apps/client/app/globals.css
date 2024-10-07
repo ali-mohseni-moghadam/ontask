@@ -30,11 +30,10 @@
 
   /* header buttons */
   .btnHeader {
-    @apply hover:bg-primary hover:text-secondary text-primary border-secondary rounded-full border;
+    @apply rounded-full border border-secondary text-primary hover:bg-primary hover:text-secondary;
   }
 
   /* pre-loader in lauout.tsx */
-
   .loader {
     width: 48px;
     height: 48px;
@@ -68,6 +67,7 @@
     }
   }
 
+  /* progress bar that used in top of site */
   .progress-bar {
     position: fixed;
     top: 0;
@@ -80,6 +80,7 @@
     z-index: 11;
   }
 
+  /* shadow used for most of site */
   .card {
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0);
@@ -88,5 +89,25 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.27);
+  }
+
+  /* active link in dashboard (profile section) */
+  .tabItem {
+    width: 80px;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .activeLink {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+
+  .tabItem:not(.activeLink) {
+    border: 1px solid transparent;
+    color: black;
   }
 }

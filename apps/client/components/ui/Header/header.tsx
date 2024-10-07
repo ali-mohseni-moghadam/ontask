@@ -12,6 +12,8 @@ import Menu from '../Menu/Menu'
 import { AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
+import React from 'react'
+
 export default function Header() {
   const [show, setShow] = useState(false)
 
@@ -19,7 +21,7 @@ export default function Header() {
 
   return (
     <>
-      <header className='border-secondary xsm:px-8 sticky top-0 z-10 flex items-center justify-between border-b bg-background px-4 py-8 md:mx-auto md:mb-6 md:w-[700px] md:px-0 md:py-4 lg:w-[1000px]'>
+      <header className='sticky top-0 z-10 flex items-center justify-between border-b border-secondary bg-background px-4 py-8 xsm:px-8 md:mx-auto md:mb-6 md:w-[700px] md:px-0 md:py-4 lg:w-[1000px]'>
         <div className='hidden items-center gap-x-3 md:flex'>
           {/* <ThemeToggle /> */}
 

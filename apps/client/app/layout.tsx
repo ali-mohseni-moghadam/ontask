@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import Header from '@/components/ui/Header/header'
 import Footer from '@/components/ui/Footer/footer'
 import { ThemeProvider } from '@/components/ui/Theme/theme-provider'
 import { cn } from '@/lib/utils'
@@ -13,17 +12,6 @@ const vazirRegular = localFont({
   variable: '--font-vazir-regular',
   weight: '100 900'
 })
-
-// const geistSans = localFont({
-//   src: './fonts/GeistVF.woff',
-//   variable: '--font-geist-sans',
-//   weight: '100 900'
-// })
-// const geistMono = localFont({
-//   src: './fonts/GeistMonoVF.woff',
-//   variable: '--font-geist-mono',
-//   weight: '100 900'
-// })
 
 export const metadata: Metadata = {
   title: 'Ontask',
@@ -39,10 +27,8 @@ export default function RootLayout({
     <html lang='fa' dir='rtl' suppressHydrationWarning>
       <body
         className={cn(
-          'font-vazir mx-auto flex min-h-screen flex-col bg-background antialiased',
+          'mx-auto flex min-h-screen flex-col bg-background font-vazir antialiased',
           vazirRegular.variable
-          // geistSans.variable,
-          // geistMono.variable
         )}
       >
         <ClientWrapper>
@@ -53,7 +39,6 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
             <main className='grow md:mx-auto md:w-[700px] lg:w-[1000px]'>
               {children}
             </main>
