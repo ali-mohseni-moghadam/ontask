@@ -62,7 +62,7 @@ export default function SecondSection() {
           viewport={{ once: true }}
         >
           <p className='border-secondary bg-secondary mb-6 rounded-lg border-b'>
-            ویژگی های <span className='text-primary text-xl'>آن تسک</span>
+            ویژگی های <span className='text-primary text-xl'>آنتَسک</span>
           </p>
           <h3 className='font-bolder mb-6 text-2xl'>
             ابزار عالی برای آسان تر کردن کار تیمی شما

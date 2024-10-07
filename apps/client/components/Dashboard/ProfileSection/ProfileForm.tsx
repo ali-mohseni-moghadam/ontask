@@ -1,15 +1,11 @@
-'use client'
-
-import { handleLogin } from '@/utils/formAction'
-
-export default function LoginPage() {
+export default function ProfileForm() {
   return (
-    <div className='mb-2 px-6 pt-5 md:mx-auto md:w-[60%]'>
-      <div className='card rounded-3xl p-6'>
-        <form action={handleLogin}>
+    <div>
+      <div className='p-6'>
+        <form action={''}>
           <div className='mb-4 flex flex-col'>
             <label htmlFor='email' className='mb-2 w-fit text-sm'>
-              ایمیل
+              نام
             </label>
             <input
               className='rounded-md bg-secondary p-2'
@@ -21,7 +17,31 @@ export default function LoginPage() {
           </div>
           <div className='mb-4 flex flex-col'>
             <label htmlFor='password' className='mb-2 w-fit text-sm'>
-              رمز‌عبور
+              نام خانوداگی
+            </label>
+            <input
+              name='password'
+              className='rounded-md bg-secondary p-2'
+              id='password'
+              type='password'
+              placeholder='رمزعبور'
+            />
+          </div>
+          <div className='mb-4 flex flex-col'>
+            <label htmlFor='password' className='mb-2 w-fit text-sm'>
+              نام خانوداگی
+            </label>
+            <input
+              name='password'
+              className='rounded-md bg-secondary p-2'
+              id='password'
+              type='password'
+              placeholder='رمزعبور'
+            />
+          </div>
+          <div className='mb-4 flex flex-col'>
+            <label htmlFor='password' className='mb-2 w-fit text-sm'>
+              نام خانوداگی
             </label>
             <input
               name='password'
@@ -36,7 +56,7 @@ export default function LoginPage() {
             type='submit'
             className='w-full rounded-full bg-primary py-[5.5px] pe-7 ps-4 text-[#ffffff] duration-300 hover:border hover:border-secondary hover:bg-[#ffffff] hover:text-primary'
           >
-            ورود
+            ثبت
           </button>
         </form>
       </div>
