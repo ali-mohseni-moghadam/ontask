@@ -41,7 +41,7 @@ export async function handleLogin(formData: FormData) {
   const cookieStore = cookies()
   cookieStore.set('access-token', `${parsedData.email}`, {
     httpOnly: true,
-    maxAge: 60 * 10,
+    maxAge: 60 * 1000,
     secure: true
   })
 
