@@ -5,7 +5,7 @@ import UserData from './UserData'
 export default function ProfileSection() {
   return (
     <div className='md:grid md:grid-cols-2'>
-      <div className='md:items-center'>
+      <div className='md:content-center'>
         <div className='my-10'>
           <div className='absolute'>
             <Image src={Logo} alt='ontask-logo' width={130} />
@@ -22,8 +22,8 @@ export default function ProfileSection() {
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-center md:py-6'>
-        <h4 className='mb-3 text-lg'>اطلاعات کاربر</h4>
+      <div className='flex flex-col items-center justify-center md:items-end md:py-6'>
+        <h4 className='mb-3 text-center text-lg md:hidden'>اطلاعات کاربر</h4>
         <UserData />
       </div>
     </div>

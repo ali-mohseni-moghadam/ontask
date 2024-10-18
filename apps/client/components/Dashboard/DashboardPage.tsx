@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers'
 import ProfileSection from './ProfileSection/ProfileSection'
 import { redirect } from 'next/navigation'
-// import DeskSection from './DeskSection/DeskSection'
+import DeskSection from './DeskSection/DeskSection'
 // import PropingSection from './PropingSection/PropingSection'
 
 export default function DashboardPage() {
@@ -14,8 +14,12 @@ export default function DashboardPage() {
   return (
     <section>
       <ProfileSection />
-      {/* <DeskSection />
-      <PropingSection /> */}
+      <hr className='my-6 w-full rounded-3xl border border-secondary' />
+
+      <DeskSection />
+      <hr className='my-6 w-full rounded-3xl border border-secondary' />
+
+      {/* <PropingSection /> */}
     </section>
   )
 }
