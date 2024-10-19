@@ -1,5 +1,24 @@
-import React from 'react'
+export default function MyDesk() {
+  return (
+    <div className='py-6'>
+      <div>
+        <table className='w-full'>
+          <thead className='border-b-2 border-secondary'>
+            <tr>
+              <th>ID میز</th>
+              <th>ظرفیت</th>
+              <th>فعالیت</th>
+            </tr>
+          </thead>
 
-export default function AvalibvaleDesk() {
-  return <div className='py-6'>AvalibvaleDesk</div>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
 }

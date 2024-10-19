@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import MyDesk from './MyDesk'
-import AvalibvaleDesk from './AvalibvaleDesk'
+import SendPropings from './SendPropings'
+import RecivedProping from './RecivedProping'
 
-export default function DeskList() {
+export default function PropingList() {
   const [active, setActive] = useState(false)
 
   return (
@@ -12,19 +12,19 @@ export default function DeskList() {
       <div className='flex flex-col items-center gap-y-4 text-sm'>
         <div
           onClick={() => setActive(false)}
-          className={`tabItem ${!active ? 'activeLink' : ''} self-center`}
+          className={`tabItem ${!active ? 'activeLink' : ''} w-32 self-center`}
         >
-          <p>میز من</p>
+          <p>ارسال پروپینگ</p>
         </div>
         <div
           onClick={() => setActive(true)}
           className={`tabItem ${active ? 'activeLink' : ''} mb-4 w-32`}
         >
-          <p>میز‌های در دسترس</p>
+          <p>پروپینگ دریافتی</p>
         </div>
       </div>
 
-      <div>{!active ? <MyDesk /> : <AvalibvaleDesk />}</div>
+      <div>{!active ? <SendPropings /> : <RecivedProping />}</div>
     </div>
   )
 }
