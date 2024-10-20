@@ -1,4 +1,4 @@
-export default function JobForm() {
+export default function SendPropings() {
   return (
     <div>
       <div className='py-6'>
@@ -6,7 +6,7 @@ export default function JobForm() {
           {/* Job Category */}
           <div className='mb-4'>
             <label htmlFor='jobCategory' className='mb-2 text-sm'>
-              دسته شغلی
+              دسته بندی تخصص
             </label>
             <div className='relative'>
               <select
@@ -14,7 +14,7 @@ export default function JobForm() {
                 id='jobCategory'
                 className='w-full appearance-none rounded-md bg-secondary p-2 pl-4 pr-4 outline-none'
               >
-                <option value=''>انتخاب کنید</option>
+                <option value=''>انتخاب یک دسته بندی</option>
                 <option value='IT'>فناوری اطلاعات</option>
                 <option value='Marketing'>بازاریابی</option>
                 <option value='Healthcare'>بهداشت و درمان</option>
@@ -22,7 +22,7 @@ export default function JobForm() {
                 <option value='Education'>آموزش</option>
               </select>
               <span className='pointer-events-none absolute left-2 top-2.5'>
-                &#9660; {/* Down arrow symbol */}
+                &#9660;
               </span>
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function JobForm() {
           {/* Job Field */}
           <div className='mb-4'>
             <label htmlFor='jobField' className='mb-2 text-sm'>
-              زمینه شغلی
+              تخصص
             </label>
             <div className='relative'>
               <select
@@ -38,7 +38,7 @@ export default function JobForm() {
                 id='jobField'
                 className='w-full appearance-none rounded-md bg-secondary p-2 pl-4 pr-4 outline-none'
               >
-                <option value=''>انتخاب کنید</option>
+                <option value=''>انتخاب یک زیر‌شاخه</option>
                 <option value='SoftwareDevelopment'>توسعه نرم‌افزار</option>
                 <option value='DigitalMarketing'>بازاریابی دیجیتال</option>
                 <option value='Nursing'>پرستاری</option>
@@ -46,15 +46,15 @@ export default function JobForm() {
                 <option value='Teaching'>تدریس</option>
               </select>
               <span className='pointer-events-none absolute left-2 top-2.5'>
-                &#9660; {/* Down arrow symbol */}
+                &#9660;
               </span>
             </div>
           </div>
 
           {/* Job Specialization */}
-          <div className='mb-6'>
+          <div className='mb-4'>
             <label htmlFor='jobSpecialization' className='mb-2 text-sm'>
-              زمینه تخصصی شغلی
+              تعیین تخصص
             </label>
             <div className='relative'>
               <select
@@ -62,7 +62,7 @@ export default function JobForm() {
                 id='jobSpecialization'
                 className='w-full appearance-none rounded-md bg-secondary p-2 pl-4 pr-4 outline-none'
               >
-                <option value=''>انتخاب کنید</option>
+                <option value=''>انتخاب یک مشخصه</option>
                 <option value='Frontend'>فرانت‌اند</option>
                 <option value='Backend'>بک‌اند</option>
                 <option value='SEO'>سئو</option>
@@ -70,17 +70,29 @@ export default function JobForm() {
                 <option value='TeachingMath'>تدریس ریاضی</option>
               </select>
               <span className='pointer-events-none absolute left-2 top-2.5'>
-                &#9660; {/* Down arrow symbol */}
+                &#9660;
               </span>
             </div>
+          </div>
+
+          {/* decription form */}
+          <div className='mb-6'>
+            <label htmlFor='expertiseDescription'>توضیحات</label>
+            <textarea
+              name='expertiseDescription'
+              id='expertiseDescription'
+              rows={4}
+              placeholder='آنچه را که نیاز دارید بنویسید'
+              className='w-full border-b border-secondary p-3 outline-none duration-300 focus:border-primary'
+            ></textarea>
           </div>
 
           {/* Submit Button */}
           <button
             type='submit'
-            className='hover:bg-white w-full rounded-full bg-primary py-2 text-[#ffffff] duration-300 hover:border hover:border-secondary hover:text-primary'
+            className='w-full rounded-full bg-primary py-2 text-[#ffffff] duration-300 hover:bg-[#ffffff] hover:text-primary'
           >
-            ثبت
+            ارسال پروپینگ!
           </button>
         </form>
       </div>

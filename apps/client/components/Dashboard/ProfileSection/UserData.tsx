@@ -8,7 +8,7 @@ export default function UserData() {
   const [active, setActive] = useState(false)
 
   return (
-    <div className='card mb-6 px-4 pt-8'>
+    <div className='card mb-6 w-full px-4 pt-8 sm:w-[80%] lg:w-[60%]'>
       <div className='flex justify-center gap-x-4 text-sm'>
         <div
           onClick={() => setActive(false)}
