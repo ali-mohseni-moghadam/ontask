@@ -110,4 +110,9 @@
     border: 1px solid transparent;
     color: black;
   }
+
+  /* dashboard sidenav shadow */
+  .sideNavShadow {
+    box-shadow: -20px 0px 20px -25px rgba(0, 0, 0, 0.45);
+  }
 }
