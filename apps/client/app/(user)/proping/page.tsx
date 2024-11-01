@@ -1,5 +1,5 @@
-import React from 'react'
+import PropingPage from '@/components/Proping/PropingPage'
 
 export default function Proping() {
-  return <div>Proping</div>
+  return <PropingPage />
 }
