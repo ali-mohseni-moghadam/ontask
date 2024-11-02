@@ -11,7 +11,7 @@ export default function DashboardLayout({
   return (
     <div className='flex'>
       <SideNav />
-      <main className='flex w-full grow justify-center px-6 xl:mx-auto xl:w-[70%]'>
+      <main className='flex w-full justify-center px-6 xl:mx-auto xl:w-[70%]'>
         {children}
       </main>
     </div>

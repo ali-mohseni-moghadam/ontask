@@ -3,10 +3,14 @@
 import { AnimatePresence, motion } from 'framer-motion'
 
 import React, { useState } from 'react'
-import { Cross2Icon } from '@radix-ui/react-icons'
+import { Cross2Icon, PaperPlaneIcon } from '@radix-ui/react-icons'
 
 export default function RecivedCard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [message, setMessage] = useState('')
+  const [chatMessages, setChatMessages] = useState<
+    { text: string; fromUser: boolean }[]
+  >([])
 
   const formattedDate = new Date().toLocaleDateString('fa-IR', {
     year: 'numeric',
@@ -17,6 +21,22 @@ export default function RecivedCard() {
   const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (e.target === e.currentTarget) {
       setIsModalOpen(false)
+    }
+  }
+
+  const handleSendMessage = () => {
+    if (message.trim()) {
+      setChatMessages(prevMessage => [
+        ...prevMessage,
+        { text: message, fromUser: true }
+      ])
+    }
+    setMessage('')
+  }
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSendMessage()
     }
   }
 
@@ -32,7 +52,7 @@ export default function RecivedCard() {
           className='self-end rounded-md bg-primary p-2 text-background'
           onClick={() => setIsModalOpen(true)}
         >
-          نشان دادن
+          پاسخ دادن
         </button>
       </div>
 
@@ -54,8 +74,38 @@ export default function RecivedCard() {
                 </button>
               </div>
               <div className='mt-8 h-80 rounded-lg border border-primary px-2 pt-4'>
-                <p className='font-semibold text-primary'>پیام همگانی :</p>
-                <p className='text-[#707070]'>این یک پیام آزمایشی است</p>
+                {chatMessages.length === 0 ? (
+                  <p>پیامی وجود ندارد</p>
+                ) : (
+                  chatMessages.map((item, index) => (
+                    <div
+                      className='mb-3 w-fit max-w-xs rounded-xl bg-primary p-2 text-sm text-[#fff]'
+                      key={index}
+                    >
+                      {item.text}
+                    </div>
+                  ))
+                )}
+              </div>
+              <div>
+                <div className='card mt-3 flex items-center justify-between p-2'>
+                  <div
+                    className='ml-2 rounded-lg bg-primary p-2'
+                    onClick={handleSendMessage}
+                  >
+                    <PaperPlaneIcon className='size-5 cursor-pointer text-[#fff]' />
+                  </div>
+                  <div className='w-full'>
+                    <input
+                      type='text'
+                      className='w-full outline-none'
+                      placeholder='پیام خود را بنویسید'
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
+                      onKeyDown={handleKeyPress}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
