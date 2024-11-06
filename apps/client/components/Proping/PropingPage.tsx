@@ -1,39 +1,16 @@
 'use client'
-import Image from 'next/image'
 import { useState } from 'react'
-import Logo from '@/app/assets/img/ontask-logo-main.png'
-import Link from 'next/link'
 import RecivedCard from './RecivedCard'
 import Conversation from './Conversation'
 import SendCard from './SendCard'
-import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons'
 // import { AnimatePresence } from 'framer-motion'
 
 export default function PropingPage() {
   const [active, setActive] = useState(0)
-  const [show, setShow] = useState(false)
 
   return (
     <>
       <div className='mt-5 flex w-full flex-col items-center'>
-        <div className='mb-6 flex w-full items-center justify-between md:justify-end'>
-          <div className='md:hidden'>
-            {!show ? (
-              <HamburgerMenuIcon
-                className='size-8 cursor-pointer md:hidden'
-                onClick={() => setShow(true)}
-              />
-            ) : (
-              <Cross1Icon
-                className='size-8 cursor-pointer md:hidden'
-                onClick={() => setShow(false)}
-              />
-            )}
-          </div>
-          <Link href='/'>
-            <Image src={Logo} alt='ONTASK_LOGO' width={150} />
-          </Link>
-        </div>
         <div className='mb-6 w-full px-2 pt-8 sm:w-[80%] lg:w-[60%]'>
           <div className='flex flex-col items-center gap-y-2 text-sm'>
             <div

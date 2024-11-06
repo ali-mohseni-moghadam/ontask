@@ -77,10 +77,10 @@ export default function Conversation() {
         {select ? (
           <div className='card mt-3 flex items-center justify-between p-2'>
             <div
-              className='ml-2 rounded-lg bg-primary p-2'
+              className='ml-2 cursor-pointer rounded-lg bg-primary p-2'
               onClick={handleSendMessage}
             >
-              <PaperPlaneIcon className='size-5 cursor-pointer text-[#fff]' />
+              <PaperPlaneIcon className='size-5 text-[#fff]' />
             </div>
             <div className='w-full'>
               <input
