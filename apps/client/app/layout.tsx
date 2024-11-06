@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang='fa' dir='rtl' suppressHydrationWarning>
       <body
         className={cn(
-          'mx-auto flex min-h-screen flex-col bg-background font-vazir antialiased',
+          'flex min-h-screen flex-col bg-background font-vazir antialiased',
           vazirRegular.variable
         )}
       >
@@ -39,9 +39,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className='grow md:mx-auto md:w-[700px] lg:w-[1000px]'>
-              {children}
-            </main>
+            <main className='grow'>{children}</main>
             <Footer />
           </ThemeProvider>
         </ClientWrapper>

@@ -1,5 +1,3 @@
-import Logo from '@/app/assets/img/ontask-logo-main.png'
-import Image from 'next/image'
 import PropingList from './PropingList'
 
 export default function PropingSection() {
@@ -7,9 +5,6 @@ export default function PropingSection() {
     <div className='md:grid md:grid-cols-2'>
       <div className='md:content-center'>
         <div className='my-10'>
-          <div className='absolute'>
-            <Image src={Logo} alt='ontask-logo' width={130} />
-          </div>
           <h3 className='pr-5 text-7xl opacity-30'>پروپینگ</h3>
         </div>
         <div className='mb-10 text-justify'>

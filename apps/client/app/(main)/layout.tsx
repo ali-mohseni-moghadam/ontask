@@ -15,9 +15,9 @@ export default function Layout({
   children: React.ReactNode
 }>) {
   return (
-    <>
+    <div className='mx-auto md:w-[700px] lg:w-[1000px]'>
       <Header />
       <main>{children}</main>
-    </>
+    </div>
   )
 }

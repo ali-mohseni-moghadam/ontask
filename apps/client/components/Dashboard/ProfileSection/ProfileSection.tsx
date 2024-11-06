@@ -1,5 +1,3 @@
-import Logo from '@/app/assets/img/ontask-logo-main.png'
-import Image from 'next/image'
 import UserData from './UserData'
 
 export default function ProfileSection() {
@@ -7,10 +5,7 @@ export default function ProfileSection() {
     <div className='md:grid md:grid-cols-2'>
       <div className='md:content-center'>
         <div className='my-10'>
-          <div className='absolute'>
-            <Image src={Logo} alt='ontask-logo' width={130} />
-          </div>
-          <h3 className='text-8xl opacity-30'>پروفایل</h3>
+          <h3 className='text-7xl opacity-30'>پروفایل</h3>
         </div>
         <div className='mb-10 text-justify'>
           <p className='opacity-80'>
