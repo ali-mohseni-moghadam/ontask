@@ -21,10 +21,10 @@ export default function DashboardHamburger({
 
   return (
     <motion.div
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: -25, opacity: 1 }}
+      initial={{ y: -1, opacity: 0 }}
+      animate={{ y: -10, opacity: 1 }}
       transition={{ duration: 0.3 }}
-      exit={{ y: -30, opacity: 0 }}
+      exit={{ y: -1, opacity: 0 }}
       className='fixed z-10 h-screen w-full bg-background md:hidden'
     >
       <div className='my-4 flex flex-col items-center justify-center gap-y-6 text-lg'>

@@ -12,7 +12,7 @@ export default function DashboardHeader() {
 
   return (
     <>
-      <div className='mb-10 flex w-full items-center justify-between bg-background p-2 md:hidden'>
+      <div className='sticky top-0 z-10 flex w-full items-center justify-between bg-[#fff] p-2 md:hidden'>
         <div>
           {!show ? (
             <HamburgerMenuIcon
