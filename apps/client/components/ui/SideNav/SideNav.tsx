@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 
 const CONSTANT = [
   { title: 'داشبورد', href: '/dashboard' },
-  { title: 'میز', href: '/desk' },
+  { title: 'میز', href: '/desk/1' },
   { title: 'پروپینگ', href: '/proping' }
 ]
 

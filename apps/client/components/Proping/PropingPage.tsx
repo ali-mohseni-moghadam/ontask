@@ -11,7 +11,7 @@ export default function PropingPage() {
   return (
     <>
       <div className='mt-5 flex w-full flex-col items-center'>
-        <div className='mb-6 w-full px-2 pt-8 sm:w-[80%] lg:w-[60%]'>
+        <div className='mb-6 w-full px-2 pt-8 sm:w-[80%]'>
           <div className='flex flex-col items-center gap-y-2 text-sm'>
             <div
               onClick={() => setActive(0)}

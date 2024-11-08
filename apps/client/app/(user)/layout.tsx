@@ -14,9 +14,7 @@ export default function DashboardLayout({
       <DashboardHeader />
       <div className='flex'>
         <SideNav />
-        <main className='flex w-full justify-center px-6 xl:mx-auto xl:w-[70%]'>
-          {children}
-        </main>
+        <main className='flex w-full overflow-hidden px-6'>{children}</main>
       </div>
     </>
   )
