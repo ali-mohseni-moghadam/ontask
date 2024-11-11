@@ -6,8 +6,8 @@ import TaskSection from './TaskSection'
 import VideoConference from './VideoConference'
 
 export default function DeskPage({ params }: DeskParams) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { id } = params
-  console.log(id)
 
   return (
     <section className='mb-4 mt-4 flex w-full flex-col gap-2 lg:grid lg:grid-cols-3'>
