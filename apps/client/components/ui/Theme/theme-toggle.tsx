@@ -16,9 +16,9 @@ const ThemeToggle = () => {
       }}
     >
       {resolvedTheme === 'dark' ? (
-        <SunIcon className='size-5 text-orange-300' />
+        <SunIcon className='text-orange-300 size-5' />
       ) : (
-        <MoonIcon className='size-5 text-sky-950' />
+        <MoonIcon className='text-sky-950 size-5' />
       )}
       <span className='sr-only'>Toggle theme</span>
     </Button>
