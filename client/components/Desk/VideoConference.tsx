@@ -1,11 +1,21 @@
-// import io from 'socket.io-client'
+import { useEffect } from "react"
+import { useSocketStore } from "@/store/socket.store"
 
-// const socket = io('http://localhost:5000')
-
+const ws = "http://localhost:5000"
 export default function VideoConference() {
+  const { socket, connectSocket } = useSocketStore()
+
+  useEffect(() => {
+    connectSocket(ws)
+  }, [connectSocket])
+
   return (
     <div className="col-span-2 mb-10 rounded-lg bg-background px-2 py-4 shadow-lg">
-      VideoConference
+      <p className="text-lg font-bold">ویدیو کنفرانس</p>
+
+      <div className="h-60 w-full rounded-md bg-primary p-2 text-[#fff]">
+        {socket?.connect ? <p>Video</p> : <p>Loading...</p>}
+      </div>
     </div>
   )
 }
