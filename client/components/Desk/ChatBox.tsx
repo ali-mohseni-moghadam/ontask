@@ -9,13 +9,15 @@ type ChatMessage = {
 export default function ChatBox() {
   const [message, setMessage] = useState("")
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
-  const [pm, setPm] = useState<ChatMessage>()
   const { socket } = useSocketStore()
 
   useEffect(() => {
     if (socket) {
       socket.on("chat pm", (receivedMessage: ChatMessage) => {
-        setPm(receivedMessage)
+        setChatMessages(prevMessages => [
+          ...prevMessages,
+          { text: receivedMessage.text, fromUser: false }
+        ])
       })
 
       return () => {
@@ -24,9 +26,7 @@ export default function ChatBox() {
     }
   }, [socket])
 
-  if (!socket) return
-
-  const handleAddedMessage = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleAddedMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value)
   }
 
@@ -41,35 +41,35 @@ export default function ChatBox() {
     }
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter") {
       handleSendMessage()
     }
   }
+
   return (
-    <div className="w-full">
-      <div className="h-full rounded bg-background px-2 py-4 shadow-lg">
+    <div className="mb-6 h-full w-full">
+      <div className="card h-full bg-background px-2 py-4">
         <div className="flex">
           <p className="text-lg font-bold">چت باکس</p>
         </div>
-        <div className="mt-2 min-h-96 overflow-y-scroll rounded-lg border border-primary px-2 pt-4">
+        <div className="mt-2 max-h-[384px] min-h-96 overflow-y-auto overflow-x-hidden rounded-lg border border-primary px-2 pt-4">
           {chatMessages.length === 0 ? (
             <p className="text-[#707070]">پیامی وجود ندارد ...</p>
           ) : (
             chatMessages.map((item, index) => (
               <div
-                className={`mb-3 w-full max-w-fit whitespace-pre-wrap break-words rounded p-2 text-sm ${
-                  item.fromUser
-                    ? "text-white bg-primary"
-                    : "text-black bg-secondary"
-                }`}
                 key={index}
+                className={`mb-3 max-w-[90%] whitespace-pre-wrap break-words rounded p-2 text-sm ${
+                  item.fromUser
+                    ? "ml-auto bg-primary text-right text-[#fff]"
+                    : "mr-auto bg-secondary text-left text-[#000]"
+                }`}
               >
                 {item.text}
               </div>
             ))
           )}
-          <p>{pm?.text}</p>
         </div>
 
         <div className="mt-3 flex flex-col-reverse items-center gap-y-2 p-2">
@@ -79,16 +79,17 @@ export default function ChatBox() {
           >
             ارسال
           </div>
-          <div className="w-full">
-            <input
-              type="text"
-              className="w-full rounded border border-secondary px-2 py-1 outline-none"
-              placeholder="پیام خود را بنویسید"
-              value={message}
-              onChange={handleAddedMessage}
-              onKeyDown={handleKeyPress}
-            />
-          </div>
+
+          {/* <div className="w-full">
+            /> */}
+
+          <textarea
+            value={message}
+            onChange={handleAddedMessage}
+            onKeyDown={handleKeyPress}
+            className="block max-h-[90%] w-full resize-none overflow-y-auto border-none bg-background px-2 py-1 text-[#000] placeholder-[#707070] outline-none"
+            placeholder="پیام خود را بنویسید"
+          />
         </div>
       </div>
     </div>

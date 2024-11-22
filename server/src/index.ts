@@ -15,18 +15,15 @@ const io = new Server(httpServer, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`user connected with ID : ${socket.id}`);
+  console.log(`User connected with ID: ${socket.id}`);
 
   socket.on("chat message", (message: chatMessage) => {
-    console.log(`${socket.id} message is :`, message.text);
-
-    io.emit("chat pm", () => {
-      socket.broadcast.emit("chat pm", message);
-    });
+    console.log(`${socket.id} message is:`, message.text);
+    socket.broadcast.emit("chat pm", message);
   });
 
   socket.on("disconnect", () => {
-    console.log(`user with id : ${socket.id} disconnected`);
+    console.log(`User with ID: ${socket.id} disconnected`);
   });
 });
 

@@ -10,7 +10,7 @@ export default function VideoConference() {
   }, [connectSocket])
 
   return (
-    <div className="col-span-2 mb-10 rounded-lg bg-background px-2 py-4 shadow-lg">
+    <div className="card col-span-2 mb-10 h-full bg-background px-2 py-4">
       <p className="text-lg font-bold">ویدیو کنفرانس</p>
 
       <div className="h-60 w-full rounded-md bg-primary p-2 text-[#fff]">

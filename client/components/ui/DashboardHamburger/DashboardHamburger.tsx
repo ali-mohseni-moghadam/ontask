@@ -1,17 +1,17 @@
-'use client'
+"use client"
 
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 interface DashboardHamburgerProps {
   setShow: (value: boolean) => void
 }
 
 const CONSTANT = [
-  { title: 'داشبورد', href: '/dashboard' },
-  { title: 'میز', href: '/desk/1' },
-  { title: 'پروپینگ', href: '/proping' }
+  { title: "داشبورد", href: "/dashboard" },
+  { title: "میز", href: "/desk" },
+  { title: "پروپینگ", href: "/proping" }
 ]
 
 export default function DashboardHamburger({
@@ -25,12 +25,12 @@ export default function DashboardHamburger({
       animate={{ y: -10, opacity: 1 }}
       transition={{ duration: 0.3 }}
       exit={{ y: -1, opacity: 0 }}
-      className='fixed z-10 h-screen w-full bg-background md:hidden'
+      className="fixed z-10 h-screen w-full bg-background md:hidden"
     >
-      <div className='my-4 flex flex-col items-center justify-center gap-y-6 text-lg'>
+      <div className="my-4 flex flex-col items-center justify-center gap-y-6 text-lg">
         {CONSTANT.map((item, index) => (
           <Link
-            className={`w-1/4 rounded-xl border-b border-primary text-center ${pathname === item.href ? 'bg-primary text-[#fff]' : ''}`}
+            className={`w-1/4 rounded-xl border-b border-primary text-center ${pathname === item.href ? "bg-primary text-[#fff]" : ""}`}
             href={item.href}
             key={index}
             onClick={() => setShow(false)}
