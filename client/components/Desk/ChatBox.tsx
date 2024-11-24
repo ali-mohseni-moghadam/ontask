@@ -74,7 +74,7 @@ export default function ChatBox() {
 
         <div className="mt-3 flex flex-col-reverse items-center gap-y-2 p-2">
           <div
-            className="cursor-pointer self-end rounded bg-primary px-2 py-1 text-background"
+            className="hover-button cursor-pointer self-end rounded px-2 py-1"
             onClick={handleSendMessage}
           >
             ارسال

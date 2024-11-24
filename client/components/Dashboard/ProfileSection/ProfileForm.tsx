@@ -70,7 +70,7 @@ export default function ProfileForm() {
 
           <button
             type="submit"
-            className="w-full rounded-full bg-primary py-[5.5px] pe-7 ps-4 text-[#ffffff] duration-300 hover:bg-[#ffffff] hover:text-primary"
+            className="hover-button w-full rounded-full py-[5.5px] pe-7 ps-4"
           >
             ثبت
           </button>

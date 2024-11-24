@@ -25,7 +25,7 @@ export default function Conversation() {
     setChatMessages([{ text: initialMessage, fromUser: false }])
   }
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter") {
       handleSendMessage()
     }
@@ -77,19 +77,18 @@ export default function Conversation() {
         {select ? (
           <div className="card mt-3 flex items-center justify-between p-2">
             <div
-              className="ml-2 cursor-pointer rounded-lg bg-primary p-2"
+              className="hover-button ml-2 cursor-pointer rounded-lg p-2"
               onClick={handleSendMessage}
             >
-              <PaperPlaneIcon className="size-5 text-[#fff]" />
+              <PaperPlaneIcon className="size-5" />
             </div>
             <div className="w-full">
-              <input
-                type="text"
-                className="w-full outline-none"
-                placeholder="پیام خود را بنویسید"
+              <textarea
                 value={message}
                 onChange={e => setMessage(e.target.value)}
                 onKeyDown={handleKeyPress}
+                className="block max-h-[90%] w-full resize-none content-center overflow-y-auto border-none bg-background px-2 py-1 text-[#000] placeholder-[#707070] outline-none"
+                placeholder="پیام خود را بنویسید"
               />
             </div>
           </div>

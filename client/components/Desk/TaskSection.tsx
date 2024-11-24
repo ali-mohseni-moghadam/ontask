@@ -42,7 +42,7 @@ export default function TaskSection() {
         />
         <button
           onClick={handleAddTask}
-          className="self-end rounded bg-primary px-2 py-1 text-[#fff]"
+          className="hover-button self-end rounded px-2 py-1"
         >
           اضافه کردن
         </button>

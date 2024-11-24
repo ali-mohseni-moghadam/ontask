@@ -49,7 +49,7 @@ export default function RecivedCard() {
           <p className="mt-2">این یک پیام آزمایشی است</p>
         </div>
         <button
-          className="self-end rounded-md bg-primary p-2 text-background"
+          className="hover-button self-end rounded-md p-2"
           onClick={() => setIsModalOpen(true)}
         >
           پاسخ دادن
@@ -90,10 +90,10 @@ export default function RecivedCard() {
               <div>
                 <div className="mt-3 flex items-center justify-between rounded-2xl border border-secondary px-2 py-2">
                   <div
-                    className="ml-2 rounded-lg bg-primary p-2"
+                    className="hover-button ml-2 cursor-pointer rounded-lg p-2"
                     onClick={handleSendMessage}
                   >
-                    <PaperPlaneIcon className="size-4 cursor-pointer text-[#fff]" />
+                    <PaperPlaneIcon className="size-4" />
                   </div>
                   <div className="w-full">
                     <textarea

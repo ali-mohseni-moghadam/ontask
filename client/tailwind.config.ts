@@ -34,7 +34,6 @@ const config: Config = {
     fontFamily: {
       vazir: ["var(--font-vazir-regular)"]
     }
-  },
-  plugins: [require("tailwindcss-animate")]
+  }
 }
 export default config
