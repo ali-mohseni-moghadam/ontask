@@ -8,7 +8,6 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {},
     colors: {
       background: "var(--background)",
       primary: "var(--primary-color)",
@@ -32,7 +31,11 @@ const config: Config = {
       "2xl": "1536px"
     },
     fontFamily: {
-      vazir: ["var(--font-vazir-regular)"]
+      vazir: [
+        "var(--font-vazir-regular)",
+        "var(--font-vazir-bold)",
+        "var(--font-vazir-light)"
+      ]
     }
   }
 }

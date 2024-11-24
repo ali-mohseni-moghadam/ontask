@@ -11,7 +11,7 @@
     --accent-color: #b2dfdb;
   }
   .dark {
-    --background: #1b1831;
+    --background: #000000;
     --primary-color: #b65f97;
     --secondary-color: #707070;
     --text-color: #707070;
@@ -113,5 +113,9 @@
 
   .hover-button {
     @apply border border-primary bg-textColor text-[#000] duration-200 hover:bg-primary hover:text-[#fff];
+  }
+
+  .hover-text {
+    @apply hover:text-primary;
   }
 }

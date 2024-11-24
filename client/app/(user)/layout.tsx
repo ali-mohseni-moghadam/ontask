@@ -1,8 +1,8 @@
 // import type { Metadata } from 'next'
-import SideNav from '@/components/ui/SideNav/SideNav'
-import '../globals.css'
-import React from 'react'
-import DashboardHeader from '@/components/ui/DashboardHamburger/DashboardHeader'
+import SideNav from "@/components/SideNav/SideNav"
+import "../globals.css"
+import React from "react"
+import DashboardHeader from "@/components/DashboardHamburger/DashboardHeader"
 
 export default function DashboardLayout({
   children
@@ -12,9 +12,9 @@ export default function DashboardLayout({
   return (
     <>
       <DashboardHeader />
-      <div className='flex'>
+      <div className="flex">
         <SideNav />
-        <main className='flex w-full overflow-hidden px-6'>{children}</main>
+        <main className="flex w-full overflow-hidden px-6">{children}</main>
       </div>
     </>
   )

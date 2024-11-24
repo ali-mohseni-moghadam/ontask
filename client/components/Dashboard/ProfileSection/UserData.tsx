@@ -1,24 +1,24 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import ProfileForm from './ProfileForm'
-import JobForm from './JobForm'
+import { useState } from "react"
+import ProfileForm from "./ProfileForm"
+import JobForm from "./JobForm"
 
 export default function UserData() {
   const [active, setActive] = useState(false)
 
   return (
-    <div className='card mb-6 w-full px-4 pt-8 sm:w-[80%] lg:w-[60%]'>
-      <div className='flex justify-center gap-x-4 text-sm'>
+    <div className="card mb-6 w-full px-4 pt-8 sm:w-[80%] lg:w-[60%]">
+      <div className="flex justify-center gap-x-4 text-sm">
         <div
           onClick={() => setActive(false)}
-          className={`tabItem ${!active ? 'activeLink' : ''}`}
+          className={`tabItem ${!active ? "activeLink" : ""} hover-text`}
         >
           <p>پروفایل</p>
         </div>
         <div
           onClick={() => setActive(true)}
-          className={`tabItem ${active ? 'activeLink' : ''}`}
+          className={`tabItem ${active ? "activeLink" : ""} hover-text`}
         >
           <p>شغل</p>
         </div>
