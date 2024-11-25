@@ -1,81 +1,37 @@
 export default function ProfileForm() {
+  const fields = [
+    { id: "name", label: "نام", placeholder: "نام" },
+    { id: "lastName", label: "نام خانوادگی", placeholder: "نام خانوادگی" },
+    { id: "email", label: "آدرس ایمیل", placeholder: "آدرس ایمیل" },
+    { id: "mobile", label: "شماره تلفن", placeholder: "شماره تلفن" },
+    { id: "username", label: "نام کاربری", placeholder: "نام کاربری" }
+  ]
+
   return (
-    <div>
-      <div className="py-6">
-        <form action={""}>
-          <div className="mb-4 flex flex-col">
-            <label htmlFor="name" className="mb-2 w-fit text-sm">
-              نام
+    <div className="py-6">
+      <form>
+        {fields.map(field => (
+          <div key={field.id} className="mb-4 flex flex-col">
+            <label htmlFor={field.id} className="mb-2 w-fit text-sm">
+              {field.label}
             </label>
             <input
               className="rounded-md bg-secondary p-2"
-              name="name"
-              id="name"
+              id={field.id}
+              name={field.id}
               type="text"
-              placeholder="نام"
+              placeholder={field.placeholder}
             />
           </div>
+        ))}
 
-          <div className="mb-4 flex flex-col">
-            <label htmlFor="lastName" className="mb-2 w-fit text-sm">
-              نام خانوداگی
-            </label>
-            <input
-              name="lastName"
-              className="rounded-md bg-secondary p-2"
-              id="lastName"
-              type="text"
-              placeholder="نام خانوادگی"
-            />
-          </div>
-
-          <div className="mb-4 flex flex-col">
-            <label htmlFor="email" className="mb-2 w-fit text-sm">
-              آدرس ایمیل
-            </label>
-            <input
-              name="email"
-              className="rounded-md bg-secondary p-2"
-              id="email"
-              type="text"
-              placeholder="آدرس ایمیل"
-            />
-          </div>
-
-          <div className="mb-4 flex flex-col">
-            <label htmlFor="mobile" className="mb-2 w-fit text-sm">
-              شماره تلفن
-            </label>
-            <input
-              name="mobile"
-              className="rounded-md bg-secondary p-2"
-              id="mobile"
-              type="text"
-              placeholder="شماره تلفن"
-            />
-          </div>
-
-          <div className="mb-6 flex flex-col">
-            <label htmlFor="username" className="mb-2 w-fit text-sm">
-              نام کاربری
-            </label>
-            <input
-              name="username"
-              className="rounded-md bg-secondary p-2"
-              id="username"
-              type="text"
-              placeholder="نام کاربری"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="hover-button w-full rounded-full py-[5.5px] pe-7 ps-4"
-          >
-            ثبت
-          </button>
-        </form>
-      </div>
+        <button
+          type="submit"
+          className="hover-button w-full rounded-full py-[5.5px] pe-7 ps-4"
+        >
+          ثبت
+        </button>
+      </form>
     </div>
   )
 }

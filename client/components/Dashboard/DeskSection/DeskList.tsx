@@ -14,7 +14,7 @@ export default function DeskList() {
           onClick={() => setActive(false)}
           className={`tabItem ${!active ? "activeLink" : ""} self-center`}
         >
-          <p>میز کار من</p>
+          <p>میز من</p>
         </div>
         <div
           onClick={() => setActive(true)}

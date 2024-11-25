@@ -4,7 +4,7 @@ import { useState } from "react"
 import ProfileForm from "./ProfileForm"
 import JobForm from "./JobForm"
 
-export default function UserData() {
+export default function ProfileList() {
   const [active, setActive] = useState(false)
 
   return (
@@ -12,13 +12,13 @@ export default function UserData() {
       <div className="flex justify-center gap-x-4 text-sm">
         <div
           onClick={() => setActive(false)}
-          className={`tabItem ${!active ? "activeLink" : ""} hover-text`}
+          className={`tabItem ${!active ? "activeLink" : ""}`}
         >
           <p>پروفایل</p>
         </div>
         <div
           onClick={() => setActive(true)}
-          className={`tabItem ${active ? "activeLink" : ""} hover-text`}
+          className={`tabItem ${active ? "activeLink" : ""}`}
         >
           <p>شغل</p>
         </div>
