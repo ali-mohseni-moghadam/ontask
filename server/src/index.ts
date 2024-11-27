@@ -12,6 +12,7 @@ const port = 5000;
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: { origin: "*", methods: ["GET", "POST"] },
+  connectionStateRecovery: {},
 });
 
 io.on("connection", (socket) => {
@@ -20,6 +21,11 @@ io.on("connection", (socket) => {
   socket.on("chat message", (message: chatMessage) => {
     console.log(`${socket.id} message is:`, message.text);
     socket.broadcast.emit("chat pm", message);
+  });
+
+  socket.on("online", (data) => {
+    console.log(`${data.userId} is online`);
+    socket.broadcast.emit("user-online", data);
   });
 
   socket.on("disconnect", () => {

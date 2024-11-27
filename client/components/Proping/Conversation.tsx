@@ -36,7 +36,7 @@ export default function Conversation() {
       <div className="mb-6 w-full lg:flex-grow">
         <div
           className={`card mb-4 flex flex-col border border-primary p-4 ${
-            select === 1 ? "bg-primary text-[#ffffff]" : ""
+            select === 1 ? "bg-primary text-[#ffffff]" : "hover:bg-textColor"
           } cursor-pointer duration-200`}
           onClick={() => {
             setSelect(1)
@@ -52,7 +52,7 @@ export default function Conversation() {
         </div>
         <div
           className={`card mb-4 flex flex-col border border-primary p-4 ${
-            select === 2 ? "bg-primary text-[#ffffff]" : ""
+            select === 2 ? "bg-primary text-[#ffffff]" : "hover:bg-textColor"
           } cursor-pointer duration-200`}
           onClick={() => {
             setSelect(2)
@@ -82,15 +82,13 @@ export default function Conversation() {
             >
               <PaperPlaneIcon className="size-5" />
             </div>
-            <div className="w-full">
-              <textarea
-                value={message}
-                onChange={e => setMessage(e.target.value)}
-                onKeyDown={handleKeyPress}
-                className="block max-h-[90%] w-full resize-none content-center overflow-y-auto border-none bg-background px-2 py-1 text-[#000] placeholder-[#707070] outline-none"
-                placeholder="پیام خود را بنویسید"
-              />
-            </div>
+            <textarea
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+              onKeyDown={handleKeyPress}
+              className="block max-h-[90%] w-full resize-none content-center overflow-y-auto border-none bg-background px-2 py-1 text-[#000] placeholder-[#707070] outline-none"
+              placeholder="پیام خود را بنویسید"
+            />
           </div>
         ) : null}
       </div>

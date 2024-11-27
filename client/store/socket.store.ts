@@ -1,5 +1,5 @@
-import { create } from "zustand"
 import io, { Socket } from "socket.io-client"
+import { create } from "zustand"
 
 type SocketStore = {
   socket: Socket | null
@@ -13,8 +13,11 @@ export const useSocketStore = create<SocketStore>(set => ({
     const socket = io(url)
     set({ socket })
 
-    socket.on("connect", () => {
-      console.log("user connected!")
+    console.log("Connected to server")
+    socket.emit("online", { userId: crypto.randomUUID() })
+
+    socket.on("user-online", data => {
+      console.log(`${data.userId} is now online`)
     })
   }
 }))

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react"
 import { useSocketStore } from "@/store/socket.store"
+import React, { useEffect, useState } from "react"
 
 type ChatMessage = {
   text: string
@@ -79,9 +79,6 @@ export default function ChatBox() {
           >
             ارسال
           </div>
-
-          {/* <div className="w-full">
-            /> */}
 
           <textarea
             value={message}
