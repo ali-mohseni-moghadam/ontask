@@ -13,11 +13,14 @@ export const useSocketStore = create<SocketStore>(set => ({
     const socket = io(url)
     set({ socket })
 
-    console.log("Connected to server")
-    socket.emit("online", { userId: crypto.randomUUID() })
+    socket.on("connect", () => {
+      console.log("Connected to server")
 
-    socket.on("user-online", data => {
-      console.log(`${data.userId} is now online`)
+      socket.emit("online", socket.id)
+
+      socket.on("user-online", id => {
+        console.log(`${id} is now online`)
+      })
     })
   }
 }))

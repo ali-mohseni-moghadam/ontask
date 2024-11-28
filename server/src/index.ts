@@ -22,10 +22,9 @@ io.on("connection", (socket) => {
     console.log(`${socket.id} message is:`, message.text);
     socket.broadcast.emit("chat pm", message);
   });
-
-  socket.on("online", (data) => {
-    console.log(`${data.userId} is online`);
-    socket.broadcast.emit("user-online", data);
+  socket.on("online", (id) => {
+    console.log(`${id} is online`);
+    socket.broadcast.emit("user-online", id);
   });
 
   socket.on("disconnect", () => {
