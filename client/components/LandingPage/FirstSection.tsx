@@ -53,7 +53,14 @@ export default function FirstSection() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.3 }}
           >
-            <Image src={LandingPic} alt="Landing-pic" />
+            <Image
+              priority
+              src={LandingPic}
+              alt="Landing-pic"
+              width={600}
+              height={400}
+              loading="eager"
+            />
           </motion.div>
         </div>
       </motion.section>

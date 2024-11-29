@@ -1,16 +1,18 @@
 "use client"
 
-import Image from "next/image"
-import Logo from "@/app/assets/img/ontask-logo-mini00.png"
 import LogoDark from "@/app/assets/img/ontask-logo-mini.jpg"
-import { PersonIcon } from "@radix-ui/react-icons"
-import { HamburgerMenuIcon } from "@radix-ui/react-icons"
-import { Cross2Icon as Cross1Icon } from "@radix-ui/react-icons"
+import Logo from "@/app/assets/img/ontask-logo-mini00.png"
+import {
+  Cross2Icon as Cross1Icon,
+  HamburgerMenuIcon,
+  PersonIcon
+} from "@radix-ui/react-icons"
+import { AnimatePresence } from "framer-motion"
+import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useState } from "react"
 import Menu from "../Menu/Menu"
-import { AnimatePresence } from "framer-motion"
-import { usePathname } from "next/navigation"
 
 import React from "react"
 import ThemeToggle from "../Theme/theme-toggle"
@@ -72,10 +74,11 @@ export default function Header() {
           onClick={() => setShow(false)}
         >
           <Image
+            priority
+            className="w-[200px]"
             src={theme === "dark" ? LogoDark : Logo}
             alt="Logo"
-            width={150}
-            height={150}
+            loading="eager"
           />
         </Link>
       </header>
