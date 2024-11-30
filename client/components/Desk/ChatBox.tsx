@@ -6,10 +6,17 @@ type ChatMessage = {
   fromUser: boolean
 }
 
+const ws = "http://localhost:5000"
+
 export default function ChatBox() {
+  const { socket, connectSocket } = useSocketStore()
+
   const [message, setMessage] = useState("")
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
-  const { socket } = useSocketStore()
+
+  useEffect(() => {
+    connectSocket(ws)
+  }, [connectSocket])
 
   useEffect(() => {
     if (socket) {
