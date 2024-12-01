@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import ProfileForm from "./ProfileForm"
 import JobForm from "./JobForm"
+import ProfileForm from "./ProfileForm"
 
 export default function ProfileList() {
   const [active, setActive] = useState(false)
 
   return (
-    <div className="card mb-6 w-full px-4 pt-8 sm:w-[80%] lg:w-[60%]">
+    <div className="card mb-6 w-full px-4 py-8 sm:w-[80%] lg:w-[60%]">
       <div className="flex justify-center gap-x-4 text-base">
         <div
           onClick={() => setActive(false)}
@@ -24,7 +24,12 @@ export default function ProfileList() {
         </div>
       </div>
 
-      <div>{!active ? <ProfileForm /> : <JobForm />}</div>
+      <div
+        className="overflow-y-auto transition-all duration-300"
+        style={{ height: "500px" }}
+      >
+        {!active ? <ProfileForm /> : <JobForm />}
+      </div>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 export default function SendPropings() {
   return (
     <div>
-      <div className="py-6">
-        <form action={""}>
+      <div className="flex h-full flex-col pt-4">
+        <form action={""} className="flex h-full flex-col">
           {/* Job Category */}
           <div className="mb-4">
             <label htmlFor="jobCategory" className="mb-2 text-sm">

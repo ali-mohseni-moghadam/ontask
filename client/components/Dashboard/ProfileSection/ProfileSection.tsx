@@ -1,5 +1,4 @@
-// import ProfileSectionItem from "./ProfileSectionItem"
-import UserData from "./ProfileList"
+import ProfileList from "./ProfileList"
 
 export default function ProfileSection() {
   return (
@@ -20,7 +19,7 @@ export default function ProfileSection() {
 
       <div className="flex flex-col items-center justify-center md:items-end md:py-6">
         <h4 className="mb-3 text-center text-lg md:hidden">اطلاعات کاربر</h4>
-        <UserData />
+        <ProfileList />
       </div>
     </div>
   )

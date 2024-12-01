@@ -39,11 +39,11 @@ export default function JobForm() {
   ]
 
   return (
-    <div className="py-6">
-      <form>
+    <div className="flex h-full flex-col pt-4">
+      <form className="flex h-full flex-col">
         {fields.map(field => (
-          <div key={field.id} className="mb-4">
-            <label htmlFor={field.id} className="mb-2 text-sm">
+          <div key={field.id} className="mb-12">
+            <label htmlFor={field.id} className="mb-1 block text-sm">
               {field.label}
             </label>
             <div className="relative">
@@ -64,7 +64,10 @@ export default function JobForm() {
             </div>
           </div>
         ))}
-        <button type="submit" className="hover-button w-full rounded-full py-2">
+        <button
+          type="submit"
+          className="hover-button mt-auto w-full rounded-full py-2"
+        >
           ثبت
         </button>
       </form>

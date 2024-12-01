@@ -8,8 +8,8 @@ export default function ProfileForm() {
   ]
 
   return (
-    <div className="py-6">
-      <form>
+    <div className="flex h-full flex-col pt-4">
+      <form className="flex h-full flex-col">
         {fields.map(field => (
           <div key={field.id} className="mb-4 flex flex-col">
             <label htmlFor={field.id} className="mb-2 w-fit text-sm">
@@ -27,7 +27,7 @@ export default function ProfileForm() {
 
         <button
           type="submit"
-          className="hover-button w-full rounded-full py-[5.5px] pe-7 ps-4"
+          className="hover-button mt-auto w-full rounded-full py-2"
         >
           ثبت
         </button>

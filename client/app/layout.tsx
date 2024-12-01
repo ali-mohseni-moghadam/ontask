@@ -1,11 +1,11 @@
+import Footer from "@/components/Footer/footer"
+import ClientWrapper from "@/components/Loader/ClientWrapper"
+import PageScroll from "@/components/PageScroll/PageScroll"
+import { ThemeProvider } from "@/components/Theme/theme-provider"
+import { cn } from "@/lib/utils"
 import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
-import Footer from "@/components/Footer/footer"
-import { ThemeProvider } from "@/components/Theme/theme-provider"
-import { cn } from "@/lib/utils"
-import PageScroll from "@/components/PageScroll/PageScroll"
-import ClientWrapper from "@/components/Loader/ClientWrapper"
 
 const vazirRegular = localFont({
   src: "./fonts/vazir/Vazirmatn-Regular.woff2",

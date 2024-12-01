@@ -12,7 +12,7 @@ export default function DashboardHeader() {
 
   return (
     <>
-      <div className="sticky top-0 z-10 flex w-full items-center justify-between bg-[#fff] p-2 md:hidden">
+      <div className="sticky top-0 z-10 flex w-full items-center justify-between bg-[#fff] py-8 pe-6 ps-7 md:hidden">
         <div>
           {!show ? (
             <HamburgerMenuIcon
@@ -30,9 +30,9 @@ export default function DashboardHeader() {
           <Image
             src={Logo}
             alt="ONTASK_LOGO"
-            width={150}
-            height={150}
+            className="w-40"
             loading="eager"
+            priority
           />
         </Link>
       </div>

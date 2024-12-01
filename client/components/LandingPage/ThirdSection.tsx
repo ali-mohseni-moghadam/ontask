@@ -2,10 +2,12 @@ import * as motion from "framer-motion/client"
 
 import { ArrowDownIcon } from "@radix-ui/react-icons"
 
-import { PieChartIcon } from "@radix-ui/react-icons"
-import { CheckboxIcon } from "@radix-ui/react-icons"
-import { TokensIcon } from "@radix-ui/react-icons"
-import { BarChartIcon } from "@radix-ui/react-icons"
+import {
+  BarChartIcon,
+  CheckboxIcon,
+  PieChartIcon,
+  TokensIcon
+} from "@radix-ui/react-icons"
 import Card from "./modules/Card"
 
 const cardsData = [
@@ -35,14 +37,14 @@ const cardsData = [
 
 export default function ThirdSection() {
   return (
-    <section className="card mb-10 flex flex-col items-center justify-center px-2 py-4">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-        className=""
-      >
+    <motion.section
+      className="card mb-10 flex flex-col items-center justify-center px-2 py-4"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+    >
+      <div className="">
         <h3 className="mb-8 text-2xl text-primary lg:text-3xl">
           ما نتیجه محور هستیم و این را ثابت میکنیم
         </h3>
@@ -51,12 +53,12 @@ export default function ThirdSection() {
           <p className="text-xl">به نتایج نگاه کنید</p>
           <ArrowDownIcon className="size-5" />
         </div>
-      </motion.div>
+      </div>
       <div className="flex w-full flex-col items-center justify-center md:grid md:grid-cols-2 md:gap-4">
         {cardsData.map((item, index) => (
           <Card key={index} {...item} />
         ))}
       </div>
-    </section>
+    </motion.section>
   )
 }

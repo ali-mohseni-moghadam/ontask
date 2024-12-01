@@ -2,7 +2,7 @@ import React from "react"
 
 export default function RecivedProping() {
   return (
-    <div className="py-6">
+    <div className="pt-4">
       <div>
         <table className="w-full">
           <thead className="border-b-2 border-secondary pb-10">

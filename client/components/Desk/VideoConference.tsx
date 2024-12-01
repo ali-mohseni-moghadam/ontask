@@ -1,3 +1,4 @@
+import { call } from "@/utils/VideoConference/peerHelper"
 import Peer from "peerjs"
 import { useEffect, useRef, useState } from "react"
 
@@ -40,31 +41,21 @@ export default function VideoConference() {
           console.error("Error getting media stream", error)
         })
     })
+
     peerInstance.current = peer
+
+    return () => {
+      peer.destroy()
+    }
   }, [])
 
-  const call = (remotePeerId: string) => {
-    const getMedia = navigator.mediaDevices.getUserMedia
-
-    getMedia({ video: true, audio: true })
-      .then(mediaStream => {
-        if (currentUserVideoRef.current) {
-          currentUserVideoRef.current.srcObject = mediaStream
-          currentUserVideoRef.current.play()
-        }
-
-        const call = peerInstance.current?.call(remotePeerId, mediaStream)
-
-        call?.on("stream", remoteStream => {
-          if (remoteVideoRef.current) {
-            remoteVideoRef.current.srcObject = remoteStream
-            remoteVideoRef.current.play()
-          }
-        })
-      })
-      .catch(error => {
-        console.error("Error getting media stream", error)
-      })
+  const handleCall = () => {
+    call({
+      remotePeerId: remotePeerIdValue,
+      currentUserVideoRef,
+      remoteVideoRef,
+      peerInstance
+    })
   }
 
   return (
@@ -78,13 +69,15 @@ export default function VideoConference() {
         value={remotePeerIdValue}
         onChange={e => setRemotePeerIdValue(e.target.value)}
       />
-      <button onClick={() => call(remotePeerIdValue)}>Call</button>
+      <button onClick={handleCall}>Call</button>
 
       <div className="h-60 w-full rounded-md p-2 text-[#fff]">
         <video ref={currentUserVideoRef} autoPlay muted></video>
       </div>
 
-      <video ref={remoteVideoRef} autoPlay></video>
+      <div className="text-[#fff]">
+        <video ref={remoteVideoRef} autoPlay></video>
+      </div>
     </div>
   )
 }

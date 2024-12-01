@@ -1,8 +1,6 @@
-// components/ClientWrapper.tsx
-'use client'
+"use client"
 
-import { useState, useEffect } from 'react'
-import React from 'react'
+import React, { useEffect, useState } from "react"
 
 export default function ClientWrapper({
   children
@@ -16,20 +14,23 @@ export default function ClientWrapper({
       setLoading(false)
     }
 
-    if (document.readyState === 'complete') {
+    if (
+      document.readyState === "complete" ||
+      document.readyState === "interactive"
+    ) {
       setLoading(false)
     } else {
-      window.addEventListener('load', handlePageLoad)
+      window.addEventListener("load", handlePageLoad)
     }
 
     return () => {
-      window.removeEventListener('load', handlePageLoad)
+      window.removeEventListener("load", handlePageLoad)
     }
   }, [])
 
   return loading ? (
-    <div className='flex min-h-screen w-full items-center justify-center'>
-      <span className='loader'></span>
+    <div className="flex min-h-screen w-full items-center justify-center">
+      <span className="loader"></span>
     </div>
   ) : (
     <>{children}</>

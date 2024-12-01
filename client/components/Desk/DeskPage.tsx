@@ -21,10 +21,11 @@ export default function DeskPage() {
         <div className="p-2">
           <textarea
             cols={4}
-            rows={4}
+            rows={20}
             name="notes"
             id="notes"
             className="w-full border-b-2 border-secondary outline-none duration-200 focus:border-primary"
+            placeholder="یادداشت مورد نظر را بنویسید"
           ></textarea>
         </div>
       </div>
