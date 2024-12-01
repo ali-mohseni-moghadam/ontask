@@ -1,6 +1,6 @@
+import Header from "@/components/Header/header"
 import type { Metadata } from "next"
 import "../globals.css"
-import Header from "@/components/Header/header"
 
 import React from "react"
 

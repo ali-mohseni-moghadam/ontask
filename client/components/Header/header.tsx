@@ -68,14 +68,10 @@ export default function Header() {
             onClick={() => setShow(false)}
           />
         )}
-        <Link
-          href="/"
-          // className="flex items-center justify-center rounded-full border border-textColor p-1"
-          onClick={() => setShow(false)}
-        >
+        <Link href="/" onClick={() => setShow(false)}>
           <Image
             priority
-            className="w-[200px]"
+            className="w-40"
             src={theme === "dark" ? LogoDark : Logo}
             alt="Logo"
             loading="eager"
