@@ -1,15 +1,15 @@
-'use server'
+"use server"
 
-import { signupSchema } from './zodSchema/signup'
-import { loginSchema } from './zodSchema/loginSchema'
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
+import { signupSchema } from "./zodSchema/signup"
+import { loginSchema } from "./zodSchema/loginSchema"
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 
 // =====================================================
 export async function handleSignup(formData: FormData) {
-  const email = formData.get('email')
-  const password = formData.get('password')
-  const confirmPassword = formData.get('confirmPassword')
+  const email = formData.get("email")
+  const password = formData.get("password")
+  const confirmPassword = formData.get("confirmPassword")
 
   const parsedData = signupSchema.safeParse({
     email,
@@ -25,9 +25,9 @@ export async function handleSignup(formData: FormData) {
 }
 
 // ====================================================
-export async function handleLogin(formData: FormData) {
-  const email = formData.get('email')
-  const password = formData.get('password')
+export async function handleLogin(formData: FormData): Promise<void> {
+  const email = formData.get("email")
+  const password = formData.get("password")
 
   const parsedData = loginSchema.parse({
     email,
@@ -35,11 +35,11 @@ export async function handleLogin(formData: FormData) {
   })
 
   if (!parsedData.email || !parsedData.password) {
-    return { success: false, errors: 'email or password in incorrect' }
+    throw new Error("email or password in incorrect")
   }
 
   const cookieStore = cookies()
-  cookieStore.set('access-token', `${parsedData.email}`, {
+  cookieStore.set("access-token", `${parsedData.email}`, {
     httpOnly: true,
     maxAge: 60 * 1000,
     secure: true
@@ -47,5 +47,5 @@ export async function handleLogin(formData: FormData) {
 
   console.log(cookieStore)
 
-  redirect('/dashboard')
+  redirect("/dashboard")
 }

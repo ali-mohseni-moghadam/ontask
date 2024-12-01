@@ -1,40 +1,42 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
 
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: ["class"],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}'
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
-    extend: {},
     colors: {
-      background: 'var(--background)',
-      primary: 'var(--primary-color)',
-      secondary: 'var(--secondary-color)',
-      textColor: 'var(--text-color)',
-      accentColor: 'var(--accent-color)'
+      background: "var(--background)",
+      primary: "var(--primary-color)",
+      secondary: "var(--secondary-color)",
+      textColor: "var(--text-color)",
+      accentColor: "var(--accent-color)"
     },
     screens: {
-      xxsm: '460px',
+      xxsm: "460px",
 
-      xsm: '568px',
+      xsm: "568px",
 
-      sm: '640px',
+      sm: "640px",
 
-      md: '768px',
+      md: "768px",
 
-      lg: '1024px',
+      lg: "1024px",
 
-      xl: '1280px',
+      xl: "1280px",
 
-      '2xl': '1536px'
+      "2xl": "1536px"
     },
     fontFamily: {
-      vazir: ['var(--font-vazir-regular)']
+      vazir: [
+        "var(--font-vazir-regular)",
+        "var(--font-vazir-bold)",
+        "var(--font-vazir-light)"
+      ]
     }
-  },
-  plugins: [require('tailwindcss-animate')]
+  }
 }
 export default config

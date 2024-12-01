@@ -1,7 +1,7 @@
-import { ForwardRefExoticComponent, RefAttributes } from 'react'
-import { IconProps } from '@radix-ui/react-icons/dist/types'
+import { ForwardRefExoticComponent, RefAttributes } from "react"
+import { IconProps } from "@radix-ui/react-icons/dist/types"
 
-import * as motion from 'framer-motion/client'
+import * as motion from "framer-motion/client"
 
 type CardType = {
   icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>
@@ -22,16 +22,16 @@ export default function Card({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className='xxsm:odd:items-start my-4 flex w-full flex-col items-end gap-5 rounded-2xl bg-[#fcfcfc] p-4 py-8 shadow-md'
+      className="my-4 flex w-full flex-col items-end gap-5 rounded-2xl border-b border-primary bg-[#fcfcfc] p-4 py-8 xxsm:odd:items-start"
     >
-      <Icon className='text-primary mb-2 size-7' />
+      <Icon className="mb-2 size-7 text-primary" />
 
       {percent ? (
-        <h3 className='text-xl font-bold'>{number} %</h3>
+        <h3 className="text-xl font-bold">{number} %</h3>
       ) : (
-        <h3 className='text-xl font-bold'>{number}</h3>
+        <h3 className="text-xl font-bold">{number}</h3>
       )}
-      <p className='text-sm text-gray-500'>{description}</p>
+      <p className="text-gray-500 text-sm">{description}</p>
     </motion.div>
   )
 }

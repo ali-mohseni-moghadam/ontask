@@ -1,14 +1,15 @@
-import UserData from './UserData'
+// import ProfileSectionItem from "./ProfileSectionItem"
+import UserData from "./ProfileList"
 
 export default function ProfileSection() {
   return (
-    <div className='md:grid md:grid-cols-2'>
-      <div className='md:content-center'>
-        <div className='my-10'>
-          <h3 className='text-7xl opacity-30'>پروفایل</h3>
+    <div className="md:grid md:grid-cols-2">
+      <div className="md:content-center">
+        <div className="my-10">
+          <h3 className="text-7xl opacity-30">پروفایل</h3>
         </div>
-        <div className='mb-10 text-justify'>
-          <p className='opacity-80'>
+        <div className="mb-10 text-justify">
+          <p className="opacity-80">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
             استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
             ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
@@ -17,8 +18,8 @@ export default function ProfileSection() {
         </div>
       </div>
 
-      <div className='flex flex-col items-center justify-center md:items-end md:py-6'>
-        <h4 className='mb-3 text-center text-lg md:hidden'>اطلاعات کاربر</h4>
+      <div className="flex flex-col items-center justify-center md:items-end md:py-6">
+        <h4 className="mb-3 text-center text-lg md:hidden">اطلاعات کاربر</h4>
         <UserData />
       </div>
     </div>
