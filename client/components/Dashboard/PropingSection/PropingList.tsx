@@ -8,7 +8,7 @@ export default function PropingList() {
   const [active, setActive] = useState(false)
 
   return (
-    <div className="card mb-6 w-full px-4 py-8 sm:w-[80%] lg:w-[60%]">
+    <div className="card mb-6 w-full px-4 py-8">
       <div className="flex flex-col items-center gap-y-4 text-base">
         <div
           onClick={() => setActive(false)}

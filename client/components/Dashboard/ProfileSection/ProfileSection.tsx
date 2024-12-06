@@ -2,10 +2,10 @@ import ProfileList from "./ProfileList"
 
 export default function ProfileSection() {
   return (
-    <div className="md:grid md:grid-cols-2">
+    <div className="md:10/12 md:mx-auto lg:w-10/12 xl:w-8/12 2xl:w-6/12">
       <div className="md:content-center">
         <div className="my-10">
-          <h3 className="text-7xl opacity-30">پروفایل</h3>
+          <h3 className="text-5xl opacity-30">پروفایل</h3>
         </div>
         <div className="mb-10 text-justify">
           <p className="opacity-80">

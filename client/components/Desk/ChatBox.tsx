@@ -34,7 +34,10 @@ export default function ChatBox() {
   }, [socket])
 
   const handleAddedMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value)
+    const value = e.target.value
+    if (value.trim()) {
+      setMessage(e.target.value)
+    }
   }
 
   const handleSendMessage = () => {
@@ -60,26 +63,26 @@ export default function ChatBox() {
         <div className="flex">
           <p className="text-lg font-bold">چت باکس</p>
         </div>
-        <div className="mt-2 max-h-[384px] min-h-96 overflow-y-auto overflow-x-hidden rounded-lg border border-primary px-2 pt-4">
+        <div className="mt-2 max-h-[384px] min-h-96 w-full overflow-y-auto overflow-x-hidden rounded-lg border border-primary px-2 pt-4">
           {chatMessages.length === 0 ? (
             <p className="text-[#707070]">پیامی وجود ندارد ...</p>
           ) : (
             chatMessages.map((item, index) => (
               <div
                 key={index}
-                className={`mb-3 max-w-[90%] whitespace-pre-wrap break-words rounded p-2 text-sm ${
+                className={`mb-3 max-w-fit whitespace-pre-wrap break-words rounded p-2 text-sm ${
                   item.fromUser
                     ? "ml-auto bg-primary text-right text-[#fff]"
                     : "mr-auto bg-secondary text-left text-[#000]"
                 }`}
               >
-                {item.text}
+                <p>{item.text}</p>
               </div>
             ))
           )}
         </div>
 
-        <div className="mt-3 flex flex-col-reverse items-center gap-y-2 p-2">
+        <div className="mt-3 flex flex-col-reverse items-center gap-y-4 p-2">
           <button
             className="hover-button cursor-pointer self-end rounded px-2 py-1"
             onClick={handleSendMessage}

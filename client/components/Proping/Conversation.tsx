@@ -33,7 +33,7 @@ export default function Conversation() {
 
   return (
     <div className="flex w-full flex-col lg:h-full lg:flex-row lg:gap-4">
-      <div className="mb-6 w-full lg:flex-grow">
+      <div className="mb-6 lg:flex-grow">
         <div
           className={`card mb-4 flex flex-col border border-primary p-4 ${
             select === 1 ? "bg-primary text-[#ffffff]" : "hover:bg-textColor"
@@ -68,7 +68,7 @@ export default function Conversation() {
         </div>
       </div>
 
-      <div className="flex w-full flex-col pb-2 lg:flex-grow">
+      <div className="flex w-[70%] flex-col pb-2 lg:flex-grow">
         <div>
           {select === 0 && <p>لطفا یک گفتگو انتخاب کنید</p>}
           {select > 0 && <ChatBox messages={chatMessages} />}

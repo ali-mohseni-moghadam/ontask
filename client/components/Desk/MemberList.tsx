@@ -12,7 +12,7 @@ const defaultMembers: Member[] = [
   {
     id: 1,
     name: "علی محسنی مقدم",
-    role: "Moderator",
+    role: "ادمین",
     email: "ali@example.com",
     joinedDate: "2024-01-01"
   },
@@ -20,7 +20,7 @@ const defaultMembers: Member[] = [
   {
     id: 2,
     name: "علیرضا فرجی",
-    role: "Admin",
+    role: "مدیر",
     email: "reza@example.com",
     joinedDate: "2024-03-10"
   }
@@ -60,7 +60,7 @@ export default function MemberList() {
                 onClick={() => handleView(member)}
                 className="hover-button rounded px-2 py-1 text-sm"
               >
-                View
+                دیدن
               </button>
             </li>
           ))}
@@ -78,16 +78,14 @@ export default function MemberList() {
           onClick={handleBackdropClick}
         >
           <div className="card w-[90%] max-w-md bg-background p-6">
-            <h3 className="mb-4 text-lg font-bold text-primary">
-              Member Details
-            </h3>
-            <p>
+            <h3 className="mb-4 text-xl font-bold text-primary">جزییات اعضا</h3>
+            <p className="py-2">
               <strong>اسم:</strong> {selectedMember.name}
             </p>
             <p>
               <strong>نقش:</strong> {selectedMember.role}
             </p>
-            <p>
+            <p className="py-2">
               <strong>ایمیل:</strong> {selectedMember.email}
             </p>
             <p>
@@ -95,9 +93,9 @@ export default function MemberList() {
             </p>
             <button
               onClick={closeModal}
-              className="hover-button mt-4 w-full rounded px-4 py-2"
+              className="hover-button mt-4 w-full cursor-pointer rounded px-4 py-2"
             >
-              Close
+              بستن
             </button>
           </div>
         </div>

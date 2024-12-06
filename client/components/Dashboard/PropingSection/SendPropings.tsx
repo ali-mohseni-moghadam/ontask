@@ -83,7 +83,7 @@ export default function SendPropings() {
               id="expertiseDescription"
               rows={4}
               placeholder="آنچه را که نیاز دارید بنویسید"
-              className="w-full border-b border-secondary p-3 outline-none duration-300 focus:border-primary"
+              className="w-full resize-none border-b border-secondary p-3 outline-none duration-300 focus:border-primary"
             ></textarea>
           </div>
 

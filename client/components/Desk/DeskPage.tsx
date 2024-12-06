@@ -10,9 +10,9 @@ export default function DeskPage() {
   return (
     <section className="mt-4 flex w-full flex-col gap-x-6 lg:grid lg:grid-cols-3">
       <ChatBox />
-      <MemberList />
-      <TaskSection />
       <NoteSection />
+      <TaskSection />
+      <MemberList />
       <VideoConference />
     </section>
   )
