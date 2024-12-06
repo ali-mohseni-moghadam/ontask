@@ -1,8 +1,8 @@
-import { DragHandleHorizontalIcon } from "@radix-ui/react-icons"
 import { Reorder } from "framer-motion"
-import { useState } from "react"
+import React, { useRef, useState } from "react"
+import TaskItem from "./TaskItem"
 
-interface Task {
+export interface Task {
   id: number
   text: string
   isDone: boolean
@@ -11,10 +11,11 @@ interface Task {
 export default function TaskSection() {
   const [tasks, setTasks] = useState<Task[]>([])
   const [newTask, setNewTask] = useState("")
+  const container = useRef(null)
 
   const handleAddTask = () => {
     if (newTask.trim() !== "") {
-      setTasks([...tasks, { id: Math.random(), text: newTask, isDone: false }])
+      setTasks([...tasks, { id: Date.now(), text: newTask, isDone: false }])
       setNewTask("")
     }
   }
@@ -27,16 +28,22 @@ export default function TaskSection() {
     )
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      handleAddTask()
+    }
+  }
+
   return (
     <div className="card mb-6 flex h-[600px] flex-col overflow-y-auto bg-background px-2 py-4">
       <h5 className="mb-4 text-lg">برنامه ریزی</h5>
       <div className="mb-4 flex flex-col p-2">
-        <input
-          type="text"
+        <textarea
           value={newTask}
           onChange={e => setNewTask(e.target.value)}
-          placeholder="تسک جدید"
-          className="mb-2 w-full rounded border border-secondary px-2 py-1 outline-none"
+          onKeyDown={handleKeyDown}
+          className="block max-h-[90%] w-full resize-none overflow-y-auto border-none bg-background px-2 py-1 text-[#000] placeholder-[#707070] outline-none"
+          placeholder="پیام خود را بنویسید"
         />
         <button
           onClick={handleAddTask}
@@ -45,32 +52,21 @@ export default function TaskSection() {
           اضافه کردن
         </button>
       </div>
+
       <Reorder.Group
         className="mb-4 flex flex-col gap-y-2 p-2"
         values={tasks}
-        axis="y"
         onReorder={setTasks}
+        ref={container}
+        axis="y"
       >
         {tasks.map(item => (
-          <Reorder.Item
+          <TaskItem
             key={item.id}
-            value={item}
-            className="flex items-center justify-between whitespace-pre-wrap break-words rounded-xl bg-secondary p-2"
-          >
-            <DragHandleHorizontalIcon className="size-6" />
-
-            <p
-              className={`${item.isDone ? "text-[#707070] line-through" : ""} w-[70%] text-center`}
-            >
-              {item.text}
-            </p>
-            <input
-              className="cursor-pointer"
-              type="checkbox"
-              checked={item.isDone}
-              onChange={() => checkHandler(item.id)}
-            />
-          </Reorder.Item>
+            item={item}
+            checkHandler={checkHandler}
+            container={container}
+          />
         ))}
       </Reorder.Group>
     </div>

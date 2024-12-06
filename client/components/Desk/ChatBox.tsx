@@ -80,12 +80,12 @@ export default function ChatBox() {
         </div>
 
         <div className="mt-3 flex flex-col-reverse items-center gap-y-2 p-2">
-          <div
+          <button
             className="hover-button cursor-pointer self-end rounded px-2 py-1"
             onClick={handleSendMessage}
           >
             ارسال
-          </div>
+          </button>
 
           <textarea
             value={message}

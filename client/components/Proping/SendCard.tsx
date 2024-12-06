@@ -2,8 +2,8 @@
 
 import { AnimatePresence, motion } from "framer-motion"
 
-import React, { useState } from "react"
 import { Cross2Icon, PaperPlaneIcon } from "@radix-ui/react-icons"
+import React, { useState } from "react"
 
 export default function RecivedCard() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -69,7 +69,10 @@ export default function RecivedCard() {
             <div className="card w-5/6 max-w-md bg-background px-6 py-4">
               <div className="flex justify-between">
                 <p className="font-bold">علی مقدم</p>
-                <button onClick={() => setIsModalOpen(false)}>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="rounded-full p-1 duration-150 hover:bg-primary hover:text-[#fff]"
+                >
                   <Cross2Icon className="size-5" />
                 </button>
               </div>

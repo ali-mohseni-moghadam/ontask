@@ -3,7 +3,7 @@
 import ChatBox from "./ChatBox"
 import MemberList from "./MemberList"
 import NoteSection from "./NoteSection"
-import TaskSection from "./TaskSection"
+import TaskSection from "./TaskSection/TaskSection"
 import VideoConference from "./VideoConference"
 
 export default function DeskPage() {
