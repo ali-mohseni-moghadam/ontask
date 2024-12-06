@@ -1,3 +1,5 @@
+import { DragHandleHorizontalIcon } from "@radix-ui/react-icons"
+import { Reorder } from "framer-motion"
 import { useState } from "react"
 
 interface Task {
@@ -12,17 +14,13 @@ export default function TaskSection() {
 
   const handleAddTask = () => {
     if (newTask.trim() !== "") {
-      setTasks([...tasks, { id: Date.now(), text: newTask, isDone: false }])
+      setTasks([...tasks, { id: Math.random(), text: newTask, isDone: false }])
       setNewTask("")
     }
   }
 
-  const handleDeleteTask = (id: number) => {
-    setTasks(tasks.filter(task => task.id !== id))
-  }
-
-  const handleToggleDone = (id: number) => {
-    setTasks(
+  const checkHandler = (id: number) => {
+    setTasks(tasks =>
       tasks.map(task =>
         task.id === id ? { ...task, isDone: !task.isDone } : task
       )
@@ -30,7 +28,7 @@ export default function TaskSection() {
   }
 
   return (
-    <div className="card mb-6 flex h-full flex-col bg-background px-2 py-4">
+    <div className="card mb-6 flex h-[600px] flex-col overflow-y-auto bg-background px-2 py-4">
       <h5 className="mb-4 text-lg">برنامه ریزی</h5>
       <div className="mb-4 flex flex-col p-2">
         <input
@@ -47,60 +45,34 @@ export default function TaskSection() {
           اضافه کردن
         </button>
       </div>
+      <Reorder.Group
+        className="mb-4 flex flex-col gap-y-2 p-2"
+        values={tasks}
+        axis="y"
+        onReorder={setTasks}
+      >
+        {tasks.map(item => (
+          <Reorder.Item
+            key={item.id}
+            value={item}
+            className="flex items-center justify-between whitespace-pre-wrap break-words rounded-xl bg-secondary p-2"
+          >
+            <DragHandleHorizontalIcon className="size-6" />
 
-      {/* Active Tasks Section */}
-      <h6 className="mb-2 rounded bg-[#fdd244] p-1 text-lg">تسک‌ها</h6>
-      <ul className="p-2">
-        {tasks
-          .filter(task => !task.isDone)
-          .map(task => (
-            <li
-              key={task.id}
-              className="mb-2 flex w-full flex-col justify-between gap-x-1 whitespace-pre-wrap break-words border-b border-accentColor pb-3 xsm:flex xsm:flex-row xsm:items-center lg:flex-col"
+            <p
+              className={`${item.isDone ? "text-[#707070] line-through" : ""} w-[70%] text-center`}
             >
-              <span className="mb-3 w-full xsm:w-[50%] lg:w-full">
-                {task.text}
-              </span>
-              <div className="self-end xsm:self-center lg:self-end">
-                <button
-                  onClick={() => handleToggleDone(task.id)}
-                  className="text-white ml-2 rounded bg-[#3ef83e] px-2 py-1"
-                >
-                  انجام شد
-                </button>
-                <button
-                  onClick={() => handleDeleteTask(task.id)}
-                  className="text-white ml-2 rounded bg-[#fa4242] px-2 py-1"
-                >
-                  حذف
-                </button>
-              </div>
-            </li>
-          ))}
-      </ul>
-
-      {/* Done Tasks Section */}
-      <h6 className="mb-2 mt-6 rounded bg-[#3ef83e] p-1 text-lg">انجام شده</h6>
-      <ul className="p-2">
-        {tasks
-          .filter(task => task.isDone)
-          .map(task => (
-            <li
-              key={task.id}
-              className="mb-2 w-full flex-col items-center justify-between gap-x-1 whitespace-pre-wrap break-words border-b border-accentColor pb-2 xsm:flex xsm:flex-row"
-            >
-              <span className="w-full text-[#707070] line-through xsm:w-[50%]">
-                {task.text}
-              </span>
-              <button
-                onClick={() => handleDeleteTask(task.id)}
-                className="text-white ml-2 w-full rounded bg-[#fa4242] px-2 py-1 xsm:w-[20%]"
-              >
-                حذف
-              </button>
-            </li>
-          ))}
-      </ul>
+              {item.text}
+            </p>
+            <input
+              className="cursor-pointer"
+              type="checkbox"
+              checked={item.isDone}
+              onChange={() => checkHandler(item.id)}
+            />
+          </Reorder.Item>
+        ))}
+      </Reorder.Group>
     </div>
   )
 }

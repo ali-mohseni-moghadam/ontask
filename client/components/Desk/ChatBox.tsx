@@ -55,7 +55,7 @@ export default function ChatBox() {
   }
 
   return (
-    <div className="mb-6 h-full w-full">
+    <div className="mb-6 h-[600px] w-full">
       <div className="card h-full bg-background px-2 py-4">
         <div className="flex">
           <p className="text-lg font-bold">چت باکس</p>

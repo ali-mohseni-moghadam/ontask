@@ -1,11 +1,9 @@
-"use client"
-
 import { handleLogin } from "@/utils/formAction"
 
 export default function LoginPage() {
   return (
     <div className="mt-[15%] px-6 pt-5 md:mx-auto md:w-[60%]">
-      <div className="card rounded-3xl p-6">
+      <div className="rounded-3xl p-6">
         <form action={handleLogin}>
           <div className="mb-4 flex flex-col">
             <label htmlFor="email" className="mb-2 w-fit text-sm">
@@ -17,9 +15,10 @@ export default function LoginPage() {
               id="email"
               type="text"
               placeholder="ایمیل"
+              autoComplete="new-email"
             />
           </div>
-          <div className="mb-4 flex flex-col">
+          <div className="mb-6 flex flex-col">
             <label htmlFor="password" className="mb-2 w-fit text-sm">
               رمز‌عبور
             </label>
@@ -29,6 +28,7 @@ export default function LoginPage() {
               id="password"
               type="password"
               placeholder="رمزعبور"
+              autoComplete="new-password"
             />
           </div>
 

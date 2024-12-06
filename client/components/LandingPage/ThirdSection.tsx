@@ -38,13 +38,13 @@ const cardsData = [
 export default function ThirdSection() {
   return (
     <motion.section
-      className="card mb-10 flex flex-col items-center justify-center px-2 py-4"
+      className="mb-10 flex flex-col items-center justify-center px-2 py-4"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      <div className="">
+      <div>
         <h3 className="mb-8 text-2xl text-primary lg:text-3xl">
           ما نتیجه محور هستیم و این را ثابت میکنیم
         </h3>

@@ -10,7 +10,7 @@ export default function SignupPage() {
 
   return (
     <div className="mt-[15%] px-6 pt-5 md:mx-auto md:w-[60%]">
-      <div className="card rounded-3xl p-6">
+      <div className="p-6">
         <form action={addUser}>
           <div className="mb-4 flex flex-col">
             <label htmlFor="email" className="mb-2 w-fit text-sm">
@@ -22,6 +22,7 @@ export default function SignupPage() {
               id="email"
               type="text"
               placeholder="ایمیل"
+              autoComplete="new-email"
             />
           </div>
           <div className="mb-4 flex flex-col">
@@ -34,9 +35,10 @@ export default function SignupPage() {
               id="password"
               type="password"
               placeholder="رمزعبور"
+              autoComplete="new-password"
             />
           </div>
-          <div className="mb-8 flex flex-col">
+          <div className="mb-6 flex flex-col">
             <label htmlFor="password" className="mb-2 w-fit text-sm">
               تایید رمزعبور
             </label>
@@ -46,6 +48,7 @@ export default function SignupPage() {
               id="confirmPassword"
               type="password"
               placeholder="تایید رمزعبور"
+              autoComplete="new-password"
             />
           </div>
           <button

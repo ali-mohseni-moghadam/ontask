@@ -1,8 +1,8 @@
 "use client"
 
+import { PaperPlaneIcon } from "@radix-ui/react-icons"
 import { useState } from "react"
 import ChatBox from "./ChatBox"
-import { PaperPlaneIcon } from "@radix-ui/react-icons"
 
 export default function Conversation() {
   const [select, setSelect] = useState(0)
@@ -75,7 +75,7 @@ export default function Conversation() {
         </div>
 
         {select ? (
-          <div className="card mt-3 flex items-center justify-between p-2">
+          <div className="card mt-3 flex items-center justify-between rounded-3xl border border-primary p-2">
             <div
               className="hover-button ml-2 cursor-pointer rounded-lg p-2"
               onClick={handleSendMessage}

@@ -59,7 +59,7 @@ export default function VideoConference() {
   }
 
   return (
-    <div className="card col-span-2 mb-10 h-full bg-background px-2 py-4">
+    <div className="card col-span-2 mb-10 h-[600px] bg-background px-2 py-4">
       <p className="mb-4 text-lg font-bold">ویدیو کنفرانس</p>
 
       <h3 className="text-[#707070]">ID کاربر : {peerId}</h3>
