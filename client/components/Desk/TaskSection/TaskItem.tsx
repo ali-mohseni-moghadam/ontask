@@ -7,12 +7,14 @@ type TaskItemProps = {
   item: Task
   container: React.MutableRefObject<null>
   checkHandler: (id: number) => void
+  deleteHandler: (id: number) => void
 }
 
 export default function TaskItem({
   item,
   container,
-  checkHandler
+  checkHandler,
+  deleteHandler
 }: TaskItemProps) {
   const dragControls = useDragControls()
 
@@ -25,6 +27,7 @@ export default function TaskItem({
       dragControls.start(event as React.PointerEvent)
     }
   }
+
   return (
     <Reorder.Item
       key={item.id}
@@ -35,8 +38,8 @@ export default function TaskItem({
       dragListener={false}
       whileDrag={{ backgroundColor: "#e0e0e0" }}
     >
-      <div className="flex items-center gap-x-4">
-        <div>
+      <div className="flex cursor-pointer flex-col gap-y-3">
+        <div onClick={() => deleteHandler(item.id)}>
           <Cross2Icon className="size-6" />
         </div>
         <div

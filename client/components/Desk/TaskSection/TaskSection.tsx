@@ -34,6 +34,9 @@ export default function TaskSection() {
     }
   }
 
+  const deleteHandler = (id: number) => {
+    setTasks(tasks => tasks.filter(task => task.id !== id))
+  }
   return (
     <div className="card mb-6 flex h-[600px] flex-col overflow-y-auto bg-background px-2 py-4">
       <h5 className="mb-4 text-lg">برنامه ریزی</h5>
@@ -60,14 +63,19 @@ export default function TaskSection() {
         ref={container}
         axis="y"
       >
-        {tasks.map(item => (
-          <TaskItem
-            key={item.id}
-            item={item}
-            checkHandler={checkHandler}
-            container={container}
-          />
-        ))}
+        {tasks.length ? (
+          tasks.map(item => (
+            <TaskItem
+              key={item.id}
+              item={item}
+              checkHandler={checkHandler}
+              container={container}
+              deleteHandler={deleteHandler}
+            />
+          ))
+        ) : (
+          <p className="text-sm text-[#707070]">تسکی وجود ندارد...</p>
+        )}
       </Reorder.Group>
     </div>
   )

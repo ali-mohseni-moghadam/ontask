@@ -68,7 +68,7 @@ export default function Conversation() {
         </div>
       </div>
 
-      <div className="flex w-[70%] flex-col pb-2 lg:flex-grow">
+      <div className="flex w-full flex-col pb-2 lg:w-[70%] lg:flex-grow">
         <div>
           {select === 0 && <p>لطفا یک گفتگو انتخاب کنید</p>}
           {select > 0 && <ChatBox messages={chatMessages} />}
